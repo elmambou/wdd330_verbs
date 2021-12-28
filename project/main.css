@@ -1,0 +1,229 @@
+body {
+   background-image: url('./images/flag.svg');
+   background-size: cover;
+   margin:0; padding:0;
+   font-family: 'Shippori Mincho B1', serif;
+}
+
+button {
+   float:right;
+   margin:20px;
+   background-color:white;
+   border: solid thin black;
+   padding: 8px;
+}
+
+button:hover {
+   cursor: pointer;
+}
+
+div.blank {
+   background-color: white;
+}
+
+main>h1 {
+   margin-top: none;
+   padding-top: none;
+   font-size: 2.3em;
+   position: relative;
+   top: -20px;
+}
+
+.f1s,.f2s,.f3s,.f1p,.f2p,.f3p,.gerund,.past_participle {
+   cursor:grab;
+}
+
+h1 {
+   font-size: 2em;
+   text-align: center;
+   color: white;
+   text-shadow: 1px 2px #000;
+}
+
+h2 {
+   font-size: 1.3em;
+   text-align: center;
+   margin-top: 20px;
+}
+.clear {
+   clear:both;
+   float:none;
+}
+.divButton {
+    width: 250px;
+    height: 200px;
+    border: solid thin black;
+    background-color: lightgray;
+}
+
+.divButton:hover {
+   cursor: pointer;
+}
+
+.header, .row {
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.header {
+   font-weight:bold;
+   margin: 5px 0;
+}
+.header>div {
+   padding: 3px;
+}
+.hidden {
+   display:none;
+}
+
+.homeDesc {
+   padding: 0 10px;
+   font-size: 1.2em;
+   text-align:justify;
+}
+#home {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.highlighted {
+   color: green;
+}
+
+.result {
+   text-decoration:none;
+   color:black;
+}
+
+.row:nth-child(even) {
+   background: #CCC;
+}
+
+.tense {
+   font-weight:bold;
+   cursor: help;
+   padding:3px;
+}
+
+#answer {
+   margin-top:100px;
+}
+
+#question { 
+   margin: 75px 0 0 20px;
+   text-align:left;
+}
+
+#btnLoad {
+   display:none;
+}
+
+#conjugate {
+   background-color:white;
+}
+#content {
+   margin: -20px 20px 30px 20px;
+   padding: 20px 20px 30px 20px;
+}
+
+#instructions {
+   background-color: white;
+   padding: 20px;
+   font-size: 1.2em;
+}
+
+#learn {
+   background-color: white;
+   padding: 0 30px;
+}
+
+#verbs {
+   margin-bottom: 30px;
+}
+
+#search {
+   margin-left: 50px;
+   width: 300px;
+   padding: 3px;
+   font-size: 16px;
+   border-radius: 10px;
+}
+
+#searchContainer {
+   position: relative;
+   top: 25px;
+   left: -50px;
+   width: 300px;
+}
+
+#searchResults {
+   position: absolute;
+   width: 800px;
+   top: 10px;
+   background-color: #C0C0C0;
+   border-radius: 10px;
+   padding: 5px;
+   list-style: none;
+   display: none;
+}
+
+#searchResults li {
+      padding: 5px;
+      border-radius: 5px;
+}
+
+#searchResults li:hover {
+   background-color: white;
+}
+
+#quiz h1 {
+   color: black;
+   text-shadow: none;
+   margin-top: none;
+   font-size: 1.5em;
+}
+
+/* Card Flip */
+
+.flip-card {
+   background-color: transparent;
+   width: 425px;
+   height: 425px;
+   perspective: 1000px;
+   margin: 0 auto;
+   
+ }
+ 
+ .flip-card-inner {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   transition: transform 0.6s;
+   transform-style: preserve-3d;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ }
+ 
+ .flip-card:hover .flip-card-inner {
+   transform: rotateY(180deg);
+ }
+ 
+ .flip-card-front, .flip-card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   border-radius: 10px;
+ }
+ 
+ .flip-card-front {
+   background-color: #ccc;
+   color: black;
+ }
+ 
+ .flip-card-back {
+   background-color: #afafaf;
+   color: white;
+   transform: rotateY(180deg);
+ }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD330 Project</title>
+   <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+   <link href="./main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <nav>
+      <button type="button" class="btnQuiz">Quiz</button>
+      <button type="button" class="btnLearn">Learn</button>
+      <button type="button" class="btnInstructions">Instructions</button>
+      <button type="button" class="btnHome">Home</button>
+   </nav>
+   <div class="clear"></div>
+   <main>
+      <h1>Spanish Verb Conjugations</h1>
+      <div id="content">  
+         
+         <div id="home">
+            <div></div>
+            <div class="divButton  btnInstructions">
+               <h2>Instructions</h2>
+               <div class="homeDesc">A brief introduction to the site and instructions on how to use it.</div>
+            </div>
+            <div class="divButton btnLearn">
+               <h2>Learn</h2>
+               <div class="homeDesc">View each of the verbs fully conjegated and pick out the ones you want to study.</div>
+            </div>
+            <div class="divButton btnQuiz">
+               <h2>Quiz</h2>
+               <div class="homeDesc">Randomly view one of the conjugations in your list. Hover over the card to see the answer.</div>
+            </div>
+            <div></div>
+         </div>
+         <div id="instructions" class="hidden">
+            Instructions will go here explaining the site and some screen shots of how the site is used.
+            <br><br>
+            There will also be some explainations of the moods, tenses, and forms used.
+            <br><br>
+            There will also be some details explaining that the users information is not persisted in a database, so their choices are only valid while on this computer.
+         </div>
+         <div id="learn" class="hidden">
+            <div id="searchContainer">
+               <input type="text" id="search" placeholder="Search" autocomplete="off" class="hidden" />
+               <ul id="searchResults"></ul>
+            </div> <br><br><br>
+            <select id="verbs"><option>Loading...</option></select><button type="button" id="btnLoad">Load</button>
+
+            <div class="header"><div class="mood">Indicative</div><div></div><div title="Yo">1st Person Singular</div><div title="Tu">2nd Person Singular</div><div title="El/Ella/Usted">3rd Person Singular</div><div>1st Person Plural</div><div>2nd Person Plural</div><div>3rd Person Plural</div><div>Gerund</div><div>Past Participle</div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_present">Present</div><div class="f1s" id="indicative_present_f1s"></div><div class="f2s" id="indicative_present_f2s"></div><div class="f3s" id="indicative_present_f3s"></div><div class="f1p" id="indicative_present_f1p"></div><div class="f2p" id="indicative_present_f2p"></div><div class="f3p" id="indicative_present_f3p"></div><div class="gerund" id="indicative_present_gerund"></div><div class="past_participle" id="indicative_present_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_future">Future</div><div class="f1s" id="indicative_future_f1s"></div><div class="f2s" id="indicative_future_f2s"></div><div class="f3s" id="indicative_future_f3s"></div><div class="f1p" id="indicative_future_f1p"></div><div class="f2p" id="indicative_future_f2p"></div><div class="f3p" id="indicative_future_f3p"></div><div class="gerund" id="indicative_future_gerund"></div><div class="past_participle" id="indicative_future_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_imperfect">Imperfect</div><div class="f1s" id="indicative_imperfect_f1s"></div><div class="f2s" id="indicative_imperfect_f2s"></div><div class="f3s" id="indicative_imperfect_f3s"></div><div class="f1p" id="indicative_imperfect_f1p"></div><div class="f2p" id="indicative_imperfect_f2p"></div><div class="f3p" id="indicative_imperfect_f3p"></div><div class="gerund" id="indicative_imperfect_gerund"></div><div class="past_participle" id="indicative_imperfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_preterite">Preterite</div><div class="f1s" id="indicative_preterite_f1s"></div><div class="f2s" id="indicative_preterite_f2s"></div><div class="f3s" id="indicative_preterite_f3s"></div><div class="f1p" id="indicative_preterite_f1p"></div><div class="f2p" id="indicative_preterite_f2p"></div><div class="f3p" id="indicative_preterite_f3p"></div><div class="gerund" id="indicative_preterite_gerund"></div><div class="past_participle" id="indicative_preterite_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_conditional">Conditional</div><div class="f1s" id="indicative_conditional_f1s"></div><div class="f2s" id="indicative_conditional_f2s"></div><div class="f3s" id="indicative_conditional_f3s"></div><div class="f1p" id="indicative_conditional_f1p"></div><div class="f2p" id="indicative_conditional_f2p"></div><div class="f3p" id="indicative_conditional_f3p"></div><div class="gerund" id="indicative_conditional_gerund"></div><div class="past_participle" id="indicative_conditional_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_present_perfect">Present Perfect</div><div class="f1s" id="indicative_present_perfect_f1s"></div><div class="f2s" id="indicative_present_perfect_f2s"></div><div class="f3s" id="indicative_present_perfect_f3s"></div><div class="f1p" id="indicative_present_perfect_f1p"></div><div class="f2p" id="indicative_present_perfect_f2p"></div><div class="f3p" id="indicative_present_perfect_f3p"></div><div class="gerund" id="indicative_present_perfect_gerund"></div><div class="past_participle" id="indicative_future_perfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_future_perfect">Future Perfect</div><div class="f1s" id="indicative_future_perfect_f1s"></div><div class="f2s" id="indicative_future_perfect_f2s"></div><div class="f3s" id="indicative_future_perfect_f3s"></div><div class="f1p" id="indicative_future_perfect_f1p"></div><div class="f2p" id="indicative_future_perfect_f2p"></div><div class="f3p" id="indicative_future_perfect_f3p"></div><div class="gerund" id="indicative_future_perfect_gerund"></div><div class="past_participle" id="indicative_future_perfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_past_perfect">Past Perfect</div><div class="f1s" id="indicative_past_perfect_f1s"></div><div class="f2s" id="indicative_past_perfect_f2s"></div><div class="f3s" id="indicative_past_perfect_f3s"></div><div class="f1p" id="indicative_past_perfect_f1p"></div><div class="f2p" id="indicative_past_perfect_f2p"></div><div class="f3p" id="indicative_past_perfect_f3p"></div><div class="gerund" id="indicative_past_perfect_gerund"></div><div class="past_participle" id="indicative_past_perfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_preterite_archaic">Preterite (Archaic)</div><div class="f1s" id="indicative_preterite_archaic_f1s"></div><div class="f2s" id="indicative_preterite_archaic_f2s"></div><div class="f3s" id="indicative_preterite_archaic_f3s"></div><div class="f1p" id="indicative_preterite_archaic_f1p"></div><div class="f2p" id="indicative_preterite_archaic_f2p"></div><div class="f3p" id="indicative_preterite_archaic_f3p"></div><div class="gerund" id="indicative_preterite_archaic_gerund"></div><div class="past_participle" id="indicative_preterite_archaic_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="indicative_conditional_perfect">Conditional Perfect</div><div class="f1s" id="indicative_conditional_perfect_f1s"></div><div class="f2s" id="indicative_conditional_perfect_f2s"></div><div class="f3s" id="indicative_conditional_perfect_f3s"></div><div class="f1p" id="indicative_conditional_perfect_f1p"></div><div class="f2p" id="indicative_conditional_perfect_f2p"></div><div class="f3p" id="indicative_conditional_perfect_f3p"></div><div class="gerund" id="indicative_conditional_perfect_gerund"></div><div class="past_participle" id="indicative_conditional_perfect_past_participle"></div></div>
+
+            <div class="header"><div class="mood">Subjunctive</div><div></div><div>1st Person Singular</div><div>2nd Person Singular</div><div>3rd Person Singular</div><div>1st Person Plural</div><div>2nd Person Plural</div><div>3rd Person Plural</div><div>Gerund</div><div>Past Participle</div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_present">Present</div><div class="f1s" id="subjunctive_present_f1s"></div><div class="f2s" id="subjunctive_present_f2s"></div><div class="f3s" id="subjunctive_present_f3s"></div><div class="f1p" id="subjunctive_present_f1p"></div><div class="f2p" id="subjunctive_present_f2p"></div><div class="f3p" id="subjunctive_present_f3p"></div><div class="gerund" id="subjunctive_present_gerund"></div><div class="past_participle" id="subjunctive_present_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_future">Future</div><div class="f1s" id="subjunctive_future_f1s"></div><div class="f2s" id="subjunctive_future_f2s"></div><div class="f3s" id="subjunctive_future_f3s"></div><div class="f1p" id="subjunctive_future_f1p"></div><div class="f2p" id="subjunctive_future_f2p"></div><div class="f3p" id="subjunctive_future_f3p"></div><div class="gerund" id="subjunctive_future_gerund"></div><div class="past_participle" id="subjunctive_future_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_imperfect">Imperfect</div><div class="f1s" id="subjunctive_imperfect_f1s"></div><div class="f2s" id="subjunctive_imperfect_f2s"></div><div class="f3s" id="subjunctive_imperfect_f3s"></div><div class="f1p" id="subjunctive_imperfect_f1p"></div><div class="f2p" id="subjunctive_imperfect_f2p"></div><div class="f3p" id="subjunctive_imperfect_f3p"></div><div class="gerund" id="subjunctive_imperfect_gerund"></div><div class="past_participle" id="subjunctive_imperfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_present_perfect">Present Perfect</div><div class="f1s" id="subjunctive_present_perfect_f1s"></div><div class="f2s" id="subjunctive_present_perfect_f2s"></div><div class="f3s" id="subjunctive_present_perfect_f3s"></div><div class="f1p" id="subjunctive_present_perfect_f1p"></div><div class="f2p" id="subjunctive_present_perfect_f2p"></div><div class="f3p" id="subjunctive_present_perfect_f3p"></div><div class="gerund" id="subjunctive_present_perfect_gerund"></div><div class="past_participle" id="subjunctive_future_perfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_future_perfect">Future Perfect</div><div class="f1s" id="subjunctive_future_perfect_f1s"></div><div class="f2s" id="subjunctive_future_perfect_f2s"></div><div class="f3s" id="subjunctive_future_perfect_f3s"></div><div class="f1p" id="subjunctive_future_perfect_f1p"></div><div class="f2p" id="subjunctive_future_perfect_f2p"></div><div class="f3p" id="subjunctive_future_perfect_f3p"></div><div class="gerund" id="subjunctive_future_perfect_gerund"></div><div class="past_participle" id="subjunctive_future_perfect_past_participle"></div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="subjunctive_past_perfect">Past Perfect</div><div class="f1s" id="subjunctive_past_perfect_f1s"></div><div class="f2s" id="subjunctive_past_perfect_f2s"></div><div class="f3s" id="subjunctive_past_perfect_f3s"></div><div class="f1p" id="subjunctive_past_perfect_f1p"></div><div class="f2p" id="subjunctive_past_perfect_f2p"></div><div class="f3p" id="subjunctive_past_perfect_f3p"></div><div class="gerund" id="subjunctive_past_perfect_gerund"></div><div class="past_participle" id="subjunctive_past_perfect_past_participle"></div></div>
+
+            <div class="header"><div class="mood">Imperative Affirmative</div><div></div><div></div><div>2nd Person Singular</div><div>3rd Person Singular</div><div></div><div>2nd Person Plural</div><div>3rd Person Plural</div><div>Gerund</div><div>Past Participle</div></div>									
+            <div class="row"><div class="blank"></div><div class="tense" id="imperative_affirmative_present">Present</div><div class="f1s" id="imperative_affirmative_present_f1s"></div><div class="f2s" id="imperative_affirmative_present_f2s"></div><div class="f3s" id="imperative_affirmative_present_f3s"></div><div class="f1p" id="imperative_affirmative_present_f1p"></div><div class="f2p" id="imperative_affirmative_present_f2p"></div><div class="f3p" id="imperative_affirmative_present_f3p"></div><div class="gerund" id="imperative_affirmative_present_gerund"></div><div class="past_participle" id="imperative_affirmative_present_past_participle"></div></div>								
+
+            <div class="header"><div class="mood">Imperative Negative</div><div></div><div></div><div>2nd Person Singular</div><div>3rd Person Singular</div><div></div><div>2nd Person Plural</div><div>3rd Person Plural</div><div>Gerund</div><div>Past Participle</div></div>
+            <div class="row"><div class="blank"></div><div class="tense" id="imperative_negative_present">Present</div><div class="f1s" id="imperative_negative_present_f1s"></div><div class="f2s" id="imperative_negative_present_f2s"></div><div class="f3s" id="imperative_negative_present_f3s"></div><div class="f1p" id="imperative_negative_present_f1p"></div><div class="f2p" id="imperative_negative_present_f2p"></div><div class="f3p" id="imperative_negative_present_f3p"></div><div class="gerund" id="imperative_negative_present_gerund"></div><div class="past_participle" id="imperative_negative_present_past_participle"></div></div>		
+            <input type="hidden" id="hvInfinitive">
+            <br><br><br>
+         </div>
+         <div id="quiz" class="hidden">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                 <div class="flip-card-front">
+                   <h1 id="question"></h1>
+                 </div>
+                 <div class="flip-card-back">
+                   <h1 id="answer"></h1> 
+                 </div>
+               </div>
+             </div>
+             <button type="button" id="btnNextQuiz">Next Question</button>
+         </div>
+      </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment-with-locales.min.js"></script>
+<script language="javascript" src="./scripts/lz-string.js"></script>
+<script src="./scripts/main.js" type="module"></script>
+</body>
+</html>						
