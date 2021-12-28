@@ -5,12 +5,12 @@ export default class Verbs {
    constructor() {
       this.quiz = new Quiz();
       let to = this; // to for this object
-      this.fetchJson('https://github.com/elmambou/wdd330_verbs/blob/main/api')
+      this.fetchJson('https://github.com/elmambou/wdd330_verbs/main/api')
       .then(data => {
          this.loadVerbs(data);
       });
       $('#btnLoad').click(function() {
-         to.fetchJson(`https://github.com/elmambou/wdd330_verbs/blob/main/api/?verb_by_id/${$('#verbs').val()}`)
+         to.fetchJson(`https://github.com/elmambou/wdd330_verbs/main/api/?verb_by_id/${$('#verbs').val()}`)
             .then(data => {
                to.loadVerb(data);
             });
